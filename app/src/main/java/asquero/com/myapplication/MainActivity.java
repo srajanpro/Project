@@ -1,7 +1,5 @@
 package asquero.com.myapplication;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,10 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ModelList> listItems;
 
-    private ViewPager viewPager;
-    private SectionPagerAdapter mSectionPagerAdapter;
-    private TabLayout mTabLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +28,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setIcon(R.drawable.app_icon);
         getSupportActionBar().setTitle(R.string.app_name);
-
-        //tabs
-        viewPager = (ViewPager)findViewById(R.id.TabPager);
-        mSectionPagerAdapter = new SectionPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(mSectionPagerAdapter);
-
-        mTabLayout = (TabLayout)findViewById(R.id.mainTabs);
 
         //Initialising RecyclerView
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
