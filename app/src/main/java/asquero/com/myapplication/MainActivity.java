@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         listItems = new ArrayList<>();
 
         for (int i = 0; i<10 ; i++){
-            ModelList listItem = new ModelList("Dummy text "+ (i+1),0,0,0,0);
+            ModelList listItem = new ModelList((i+1),"Dummy text "+ (i+1),0,0);
             listItems.add(listItem);
         }
 

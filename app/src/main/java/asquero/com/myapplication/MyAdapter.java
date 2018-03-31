@@ -30,11 +30,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         ModelList listItem = list.get(position);
 
-        holder.Topic.setText(listItem.getTopic());
+        holder.contestCode.setText(""+listItem.getContestCode());
+        holder.contestName.setText(listItem.getContestName());
         holder.endDate.setText(""+(listItem.getStartDate()));
         holder.startDate.setText(""+(listItem.getEndDate()));
-        holder.endTime.setText(""+(listItem.getStartTime()));
-        holder.startTime.setText(""+(listItem.getEndTime()));
 
     }
 
@@ -45,20 +44,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView Topic;
+        public TextView contestCode;
+        public TextView contestName;
         public TextView endDate;
         public TextView startDate;
-        public TextView endTime;
-        public TextView startTime;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            Topic = (TextView)itemView.findViewById(R.id.topic);
+            contestCode = (TextView)itemView.findViewById(R.id.contestCode);
+            contestName = (TextView)itemView.findViewById(R.id.contestName);
             endDate = (TextView)itemView.findViewById(R.id.startDateNum);
             startDate = (TextView)itemView.findViewById(R.id.endDateNum);
-            endTime = (TextView)itemView.findViewById(R.id.startTimeNum);
-            startTime = (TextView)itemView.findViewById(R.id.endTimeNum);
         }
     }
 }

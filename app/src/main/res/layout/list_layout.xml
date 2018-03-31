@@ -8,9 +8,9 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="3dp"
         card_view:cardElevation="4dp"
-        card_view:cardCornerRadius="3dp">
+        card_view:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,35 +25,47 @@
                 android:src="@drawable/default_image" />
 
             <TextView
-                android:id="@+id/topic"
+                android:id="@+id/contestCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/image"
-                android:layout_toEndOf="@+id/image"
-                android:text="@string/topic" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/contest_code" />
+
+            <TextView
+                android:id="@+id/contestName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contestCode"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/contest_name" />
 
             <TextView
                 android:id="@+id/startDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/image"
-                android:text="Starts On:" />
+                android:text="Starts On:"
+                android:layout_below="@+id/contestName" />
 
             <TextView
                 android:id="@+id/startDateNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_alignBaseline="@+id/endDate"
+                android:layout_alignBottom="@+id/endDate"
+                android:layout_alignParentEnd="true"
                 android:layout_marginLeft="5dp"
-                android:layout_toEndOf="@+id/endDate"
                 android:text="00-00-0000" />
 
             <TextView
                 android:id="@+id/endDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_alignBaseline="@+id/endDateNum"
+                android:layout_alignBottom="@+id/endDateNum"
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@+id/endDateNum"
                 android:text="Ends On:" />
@@ -62,47 +74,12 @@
                 android:id="@+id/endDateNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_alignBaseline="@+id/startDate"
+                android:layout_alignBottom="@+id/startDate"
                 android:layout_marginLeft="5dp"
                 android:layout_toEndOf="@+id/startDate"
                 android:text="00-00-0000" />
 
-            <TextView
-                android:id="@+id/startTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/image"
-                android:layout_toEndOf="@+id/image"
-                android:text="Starts In:" />
-
-            <TextView
-                android:id="@+id/startTimeNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/endTime"
-                android:layout_alignBottom="@+id/endTime"
-                android:layout_marginLeft="5dp"
-                android:layout_toEndOf="@+id/endTime"
-                android:text="00:00:00" />
-
-            <TextView
-                android:id="@+id/endTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/startTime"
-                android:layout_alignBottom="@+id/startTime"
-                android:layout_alignStart="@+id/endDate"
-                android:text="Ends In:" />
-
-            <TextView
-                android:id="@+id/endTimeNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/startTime"
-                android:layout_alignBottom="@+id/startTime"
-                android:layout_marginLeft="5dp"
-                android:layout_toEndOf="@+id/startTime"
-                android:text="00:00:00" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
