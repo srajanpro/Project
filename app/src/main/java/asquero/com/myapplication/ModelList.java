@@ -1,23 +1,29 @@
 package asquero.com.myapplication;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Anmol on 23-Mar-18.
  */
 
 public class ModelList {
-    private int contestCode;
+    private String contestCode;
     private String contestName;
-    private int startDate;
-    private int endDate;
+    private String startDate;
+    private String endDate;
+    //private int image;
+    private String AIC;
 
-    public ModelList(int contestCode, String contestName, int startDate, int endDate) {
+    public ModelList(String contestCode, String contestName, String startDate, String endDate, int image, String AIC) {
         this.contestCode = contestCode;
         this.contestName = contestName;
         this.startDate = startDate;
         this.endDate = endDate;
+        //this.image = image;
+        this.AIC = AIC;
     }
 
-    public int getContestCode() {
+    public String getContestCode() {
         return contestCode;
     }
 
@@ -25,11 +31,19 @@ public class ModelList {
         return contestName;
     }
 
-    public int getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public int getEndDate() {
+    public String getEndDate() {
         return endDate;
+    }
+
+   /* public int getImage() {
+        return image;
+    }*/
+
+    public String getAIC() {
+        return AIC;
     }
 }
