@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.app_name);
 
         //Initialising RecyclerView
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void setAdapterFunc(){
+    public void setAdapterFunc() {
 
         adapter = new MyAdapter(listItems, this);
         recyclerView.setAdapter(adapter);
@@ -113,12 +113,11 @@ public class MainActivity extends AppCompatActivity {
 
                     // Create a new {@link ModelList} object
                     Log.d(LOG_TAG, title);
-                    ModelList listItem = new ModelList(title, time, tsunamiAlert, "Asquero",0 , title);
+                    ModelList listItem = new ModelList(title, time, tsunamiAlert, "Asquero", 0, title);
                     listItems.add(listItem);
                 }
             }
-        }
-        catch (JSONException e) {
+        } catch (JSONException e) {
             Log.e(LOG_TAG, "Problem parsing the earthquake JSON results", e);
 
 
