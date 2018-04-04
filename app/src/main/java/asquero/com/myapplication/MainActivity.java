@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 listItems.add(listItem);
             }
         }
-
         adapter = new MyAdapter(listItems,this);
         recyclerView.setAdapter(adapter);*/
 
@@ -200,11 +199,9 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Log.d(LOG_TAG, "jsonResponse is not null");
             }
-
             //updateUi(earthquake);
             adapter = new MyAdapter(listItems, new MainActivity());
             recyclerView.setAdapter(adapter);
-
             ExtractFromJsonAndupdateUi(jsonResponse);*/
 
             setAdapterFunc();
@@ -284,13 +281,11 @@ public class MainActivity extends AppCompatActivity {
                     // Extract out the first feature (which is an earthquake)
                     JSONObject firstFeature = featureArray.getJSONObject(a);
                     JSONObject properties = firstFeature.getJSONObject("properties");
-
                     // Extract out the title, time, and tsunami values
                     String title = properties.getString("title");
                     //long time = properties.getLong("time");
                     String time = properties.getString("time");
                     String tsunamiAlert = properties.getString("tsunami");
-
                     // Create a new {@link ModelList} object
                     return new ModelList(title, time, tsunamiAlert, "Asquero");
                 }
