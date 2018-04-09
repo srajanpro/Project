@@ -3,9 +3,18 @@
     <string name="topic">Topic</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="contest_code">Contest Code</string>
     <string name="contest_name">Contest Name</string>
     <string name="asquero">Asquero</string>
-    <string name="start_now">Start Now</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="about">About</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    
+    <string-array name="subscription">
+        <item>CodeChef</item>
+        <item>Sphere Online Judge(SPOJ)</item>
+        <item>HackerRank</item>
+    </string-array>
 </resources>

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter {
 
     private List<ModelList>list;
     private Context context;
@@ -29,6 +29,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+    }
+
+    /*@Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ModelList listItem = list.get(position);
 
@@ -39,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         //holder.imageView.setImageResource(listItem.getImage());
         holder.aic.setText(listItem.getAIC());
 
-    }
+    }*/
 
     @Override
     public int getItemCount() {

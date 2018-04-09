@@ -90,7 +90,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
-                    android:text="@string/start_now"
+                    android:text="start now"
                     card_view:layout_constraintBottom_toBottomOf="parent"
                     card_view:layout_constraintLeft_toLeftOf="parent"
                     card_view:layout_constraintRight_toRightOf="parent" />
