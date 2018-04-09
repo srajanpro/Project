@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private ActionBarDrawerToggle mToggle;
 
-    private Toolbar mToolbar;
-
     private RecyclerView recyclerView;
     private RecyclerView.Adapter eventListAdapter;
 
@@ -92,7 +90,14 @@ public class MainActivity extends AppCompatActivity {
             edit.putBoolean("previously started", Boolean.TRUE);
             edit.apply();
             showSubscription();
+            //StringBuilder sb = new StringBuilder();
+            //for (int i = 0; i < sub_items.length; i++) {
+            //    sb.append(items[i]).append(",");
+            //}
+            //edit.putString("names", sb.toString());
         }
+
+        //String[] subslist = prefs.getString("names",);
 
         for (int i = 0; i<= 2 ; i++){
             if (i==0) {
@@ -134,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 for (int i = 0; i < mSelectedItems.size();i++){
                     if (mSelectedItems.size() == 0){
-                        for (int j = 0; j < sub_items.length;j++){
+                        for (int j = 0; j < 3;j++){
                             items[j] = sub_items[j];
                         }
                     }

@@ -52,10 +52,12 @@ class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.ViewHolder>
                 }
                 else if (position == 1){
                     Intent intent = new Intent(context,Upcoming.class);
+                    intent.putExtra("subs",holder.itemsView);
                     context.startActivity(intent);
                 }
                 else if (position == 2){
                     Intent intent = new Intent(context, Ended.class);
+                    intent.putExtra("subs",holder.itemsView);
                     context.startActivity(intent);
                 }
             }
