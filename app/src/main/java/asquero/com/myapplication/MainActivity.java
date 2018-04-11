@@ -42,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
     private List<EventList> listEvent;
 
-    private String[] sub_items;
-    private boolean[] checkedItems;
-    private ArrayList<Integer> mSelectedItems = new ArrayList<>();
-    public String[] items = {"","",""};
 
     /**
      * Tag for the log messages
@@ -78,38 +74,18 @@ public class MainActivity extends AppCompatActivity {
 
         listEvent = new ArrayList<>();
 
-        sub_items = getResources().getStringArray(R.array.subscription);
-        checkedItems = new boolean[sub_items.length];
-
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-
-        boolean previouslyStarted = prefs.getBoolean("previously started", false);
-
-        if(!previouslyStarted) {
-            SharedPreferences.Editor edit = prefs.edit();
-            edit.putBoolean("previously started", Boolean.TRUE);
-            edit.apply();
-            showSubscription();
-            //StringBuilder sb = new StringBuilder();
-            //for (int i = 0; i < sub_items.length; i++) {
-            //    sb.append(items[i]).append(",");
-            //}
-            //edit.putString("names", sb.toString());
-        }
-
-        //String[] subslist = prefs.getString("names",);
 
         for (int i = 0; i<= 2 ; i++){
             if (i==0) {
-                EventList listItem = new EventList("Live", (R.drawable.live),items);
+                EventList listItem = new EventList("Live", (R.drawable.live));
                 listEvent.add(listItem);
             }
             if (i==1) {
-                EventList listItem = new EventList("Upcoming", (R.drawable.upcoming),items);
+                EventList listItem = new EventList("Upcoming", (R.drawable.upcoming));
                 listEvent.add(listItem);
             }
             if (i==2) {
-                EventList listItem = new EventList("Ended", (R.drawable.ended),items);
+                EventList listItem = new EventList("Ended", (R.drawable.ended));
                 listEvent.add(listItem);
             }
         }
@@ -117,40 +93,6 @@ public class MainActivity extends AppCompatActivity {
         eventListAdapter = new EventListAdapter(listEvent,this);
         recyclerView.setAdapter(eventListAdapter);
 
-    }
-
-    private void showSubscription() {
-
-        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
-        mBuilder.setTitle("Please select at least one subscription");
-        mBuilder.setMultiChoiceItems(sub_items, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int position, boolean isChecked) {
-                if (isChecked){
-                    if (!mSelectedItems.contains(position)){
-                        mSelectedItems.add(position);
-                    }else mSelectedItems.remove(position);
-                }
-            }
-        });
-        mBuilder.setCancelable(false);
-        mBuilder.setPositiveButton("Add Subscription", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                for (int i = 0; i < mSelectedItems.size();i++){
-                    if (mSelectedItems.size() == 0){
-                        for (int j = 0; j < 3;j++){
-                            items[j] = sub_items[j];
-                        }
-                    }
-                    else
-                    items[i] = sub_items[mSelectedItems.get(i)];
-                }
-            }
-        });
-
-        AlertDialog mDialog = mBuilder.create();
-        mDialog.show();
     }
 
     @Override

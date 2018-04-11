@@ -12,9 +12,6 @@ import java.util.List;
 
 public class Live extends AppCompatActivity {
 
-    private int arrSize;
-    private String[] subs;
-
     private RecyclerView recyclerView;
     private RecyclerView.Adapter liveListAdapter;
 
@@ -33,15 +30,11 @@ public class Live extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Intent intent = getIntent();
-        subs = intent.getStringArrayExtra("subs");
-
-        arrSize = subs.length;
 
         listLive = new ArrayList<>();
 
-        for (int i = 0; i< arrSize ; i++){
-            LiveList liveLists = new LiveList("DummyCode"+i,subs[i],"0","0","DummyName"+i);
+        for (int i = 0; i< 20 ; i++){
+            LiveList liveLists = new LiveList("DummyCode"+i,"DummyName"+i,"0","0","DummyName"+i);
             listLive.add(liveLists);
         }
 

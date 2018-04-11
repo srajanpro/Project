@@ -12,9 +12,6 @@ import java.util.List;
 
 public class Upcoming extends AppCompatActivity {
 
-    private int arrSize;
-    private String[] subs;
-
     private RecyclerView recyclerView;
     private RecyclerView.Adapter upcomingListAdapter;
 
@@ -33,15 +30,10 @@ public class Upcoming extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Intent intent = getIntent();
-        subs = intent.getStringArrayExtra("subs");
-
-        arrSize = subs.length;
-
         listUpcoming = new ArrayList<>();
 
-        for (int i = 0; i< arrSize ; i++){
-            UpcomingList upcomingLists = new UpcomingList("DummyCode"+i,subs[i],"0","0","DummyName"+i);
+        for (int i = 0; i< 20 ; i++){
+            UpcomingList upcomingLists = new UpcomingList("DummyCode"+i,"DummyName"+i,"0","0","DummyName"+i);
             listUpcoming.add(upcomingLists);
         }
 
